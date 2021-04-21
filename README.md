@@ -1,6 +1,6 @@
 # Resolver ![icon](https://user-images.githubusercontent.com/709283/32858974-cce8282a-ca12-11e7-944b-c8046156290b.png)
 
-An ultralight Dependency Injection / Service Locator framework for Swift 5.2 on iOS.
+An ultralight Dependency Injection / Service Locator framework for Swift 5.4 on iOS.
 
 **Note that several recent updates to Resolver may break earlier code that used [argument passing](./Documentation/Arguments.md#multiple) and/or [named services](./Documentation/Names.md). For more see the [Updates](#updates) section below.**
 
@@ -89,7 +89,7 @@ pod "Resolver"
 ```
 Resolver itself is just a single source file (Resolver.swift), so it's also easy to simply download the file and add it to your project.
 
-Note that the current version of Resolver (1.4) supports Swift 5.3 and that the minimum version of iOS currently supported with this release is iOS 11.
+Note that the current version of Resolver (1.4) supports Swift 5.3 and that the minimum version of iOS currently supported with this release is iOS 9.
 
 Read the [installation guide](./Documentation/Installation.md) for information on supporting earlier versions.
 
