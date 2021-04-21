@@ -26,12 +26,12 @@
 
 #if os(iOS)
 import UIKit
-import SwiftUI
-#elseif os(macOS) || os(tvOS) || os(watchOS)
-import Foundation
-import SwiftUI
 #else
 import Foundation
+#endif
+
+#if canImport(SwiftUI)
+import SwiftUI
 #endif
 
 // swiftlint:disable file_length
@@ -886,7 +886,9 @@ public extension UIViewController {
     }
 }
 
-#if os(iOS) || os(macOS) || os(tvOS) || os(watchOS)
+#if arch(arm)
+#else
+#if canImport(SwiftUI)
 /// Immediate injection property wrapper for SwiftUI ObservableObjects. This wrapper is meant for use in SwiftUI Views and exposes
 /// bindable objects similar to that of SwiftUI @observedObject and @environmentObject.
 ///
@@ -911,5 +913,6 @@ public extension UIViewController {
         return self.$service
     }
 }
+#endif
 #endif
 #endif
