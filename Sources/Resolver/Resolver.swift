@@ -80,6 +80,13 @@ public final class Resolver {
         self.childContainers.append(child)
     }
 
+    /// Remove a child container to this container.
+    public func remove(child: Resolver) {
+        lock.lock()
+        defer { lock.unlock() }
+        self.childContainers.removeAll(where: { $0 === child })
+    }
+
     /// Call function to force one-time initialization of the Resolver registries. Usually not needed as functionality
     /// occurs automatically the first time a resolution function is called.
     public final func registerServices() {
